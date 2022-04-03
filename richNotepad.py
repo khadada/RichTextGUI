@@ -29,6 +29,11 @@ class RichNotepad(QMainWindow):
         """
         Set the central widget for QMainWindow, which is the QTextEdit widget for notepad.
         """
+        self.text_field = QTextEdit()
+        self.setCentralWidget(self.text_field)
+    
+    def note_menu(self):
+        
         
 
 # Run Program:
