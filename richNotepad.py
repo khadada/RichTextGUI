@@ -18,9 +18,18 @@ class RichNotepad(QMainWindow):
         """
         self.setGeometry(100, 100, 600,500)
         self.setWindowTitle("5.1 Rich Text Notepad GUI")
-        # set icon to our gui
+        # set icon to our gui:
         self.setWindowIcon(QIcon("icons/logo.png"))
+        # here to resize the logo icon:
         self.setIconSize(QSize(100, 100))
+        self.create_notpad_widget()
+        self.note_menu()
+    
+    def create_notpad_widget(self):
+        """
+        Set the central widget for QMainWindow, which is the QTextEdit widget for notepad.
+        """
+        
 
 # Run Program:
 if __name__ == "__main__":
