@@ -40,22 +40,22 @@ class RichNotepad(QMainWindow):
         # Create actions for file menu:
         # New
         new_action = QAction('icons/new_file.png','New',self)
-        new_action.setShortcut("Crtl+N")
+        new_action.setShortcut("Ctrl+N")
         new_action.triggered.connect(self.clear_text)
         
         # Open:
         open_action = QAction('icons/open_file.png','Open',self)
-        open_action.setShortcut("Crtl+O")
+        open_action.setShortcut("Ctrl+O")
         open_action.triggered.connect(self.open_file)
         
         # Save:
         save_action = QAction('icons/save_file.png','Save',self)
-        save_action.setShortcut("Crtl+S")
+        save_action.setShortcut("Ctrl+S")
         save_action.triggered.connect(self.save_file)
         
         # Exit:
-        exit_action = QAction('icons/save_file.png','Exit',self)
-        exit_action.setShortcut("Crtl+Q")
+        exit_action = QAction('icons/exit.png','Exit',self)
+        exit_action.setShortcut("Ctrl+Q")
         exit_action.triggered.connect(self.close)
 
 # Run Program:
