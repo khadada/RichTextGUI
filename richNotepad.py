@@ -16,3 +16,6 @@ class RichNotepad(QMainWindow):
         """
         Initialize the window and display its contents to the screen
         """
+        self.setGeometry(100, 100, 600,500)
+        self.setWindowTitle("5.1 Rich Text Notepad GUI")
+        self.setWindowIcon(QIcon())
