@@ -57,6 +57,38 @@ class RichNotepad(QMainWindow):
         exit_action = QAction('icons/exit.png','Exit',self)
         exit_action.setShortcut("Ctrl+Q")
         exit_action.triggered.connect(self.close)
+        
+        # ------------------------------------------------
+        # Create actions for Edit menu:
+        # Undo
+        undo_action = QAction('icons/undo.png','Undo',self)
+        undo_action.setShortcut("Ctrl+Z")
+        undo_action.triggered.connect(self.text_field.undo)
+        
+        # Redo
+        redo_action = QAction('icons/redo.png','Redo',self)
+        redo_action.setShortcut("Ctrl+Shift+Z")
+        redo_action.triggered.connect(self.text_field.redo)
+        
+        # Cut
+        cut_action = QAction('icons/cut.png','Cut',self)
+        cut_action.setShortcut("Ctrl+X")
+        cut_action.triggered.connect(self.text_field.cut)
+        
+        # Copy
+        copy_action = QAction('icons/copy.png','Copy',self)
+        copy_action.setShortcut("Ctrl+C")
+        copy_action.triggered.connect(self.text_field.copy)
+        
+        # Past
+        past_action = QAction('icons/past.png','Past',self)
+        past_action.setShortcut("Ctrl+V")
+        past_action.triggered.connect(self.text_field.past)
+        
+        # Find
+        find_action = QAction('icons/fing.png','Find',self)
+        find_action.setShortcut("Ctrl+F")
+        find_action.triggered.connect(self.find_text_dialog)
 
 # Run Program:
 if __name__ == "__main__":
