@@ -184,6 +184,34 @@ class RichNotepad(QMainWindow):
         answer = QMessageBox.question(self,"Clear Text","Do you want ot clear the text?",QMessageBox.Yes,QMessageBox.No)
         if answer == QMessageBox.Yes:
             self.text_field.clear()
+    
+    def find_text_dialog(self):
+        """
+        Search in text QTextEdit widget.
+        """
+        # Display input dialog ot ask user for text to search for:
+        text_search,ok = QInputDialog.getText(self,"Search Text","Find:")
+        extra_selections = []
+        # Check to make sure the text can be modified:
+        if ok and not self.text_field.isReadOnly():
+            # Set the cursor in the textEdit field:
+            self.text_field.moveCursor(QTextCursor.Start)
+            color = QColor(Qt.yellow)
+            # Look for next occurrence of text:
+            while(self.text_field.find(text_search)):
+                # User extraselecton to mark text
+                # searching for as yellow:
+                selection = QTextEdit.ExtraSelection()
+                selection.format.setBackground(color)
+                
+                # set the cursor of the selection
+                selection.cursor = self.text_field.textCursor()
+                
+                # Add Selection to list:
+                extra_selections.append(selection)
+            # Highlight selection in text edit
+            for _ in extra_selections:
+                self.text_field.setExtraSelections(extra_selections)
 
 # Run Program:
 if __name__ == "__main__":
