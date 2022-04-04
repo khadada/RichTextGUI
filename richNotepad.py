@@ -4,6 +4,7 @@ import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QMessageBox,QTextEdit,QFileDialog,QInputDialog,QFontDialog,QColorDialog)
 from PyQt5.QtGui import QIcon, QColor, QTextCursor
 from PyQt5.QtCore import Qt,QSize
+from isort import file
 
 # Create Own Notepad:
 class RichNotepad(QMainWindow):
@@ -110,6 +111,21 @@ class RichNotepad(QMainWindow):
         about_action = QAction("icons/about.png", 'About', self)
         about_action.setShortcut("Ctrl+Shift+H")
         about_action.triggered.connect(self.about_us)
+        
+        #--------------------------------------------
+        # ----------- Create MenuBar-----------------
+        # Menu bar container:
+        menu_bar = self.menuBar()
+        # Create File menu & add its action:
+        file_menu = menu_bar.addMenu("File")
+        file_menu.addAction(new_action)
+        file_menu.addSeparator()
+        file_menu.addAction(open_action)
+        file_menu.addSeparator()
+        file_menu.addAction(save_action)
+        file_menu.addSeparator()
+        file_menu.addAction(exit_action)
+        
         
 
 
