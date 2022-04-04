@@ -1,5 +1,6 @@
 # Rich Text Notepad GUI 
 # Importing necessary modules and classes:
+from json import tool
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QMessageBox,QTextEdit,QFileDialog,QInputDialog,QFontDialog,QColorDialog)
 from PyQt5.QtGui import QIcon, QColor, QTextCursor
@@ -136,6 +137,13 @@ class RichNotepad(QMainWindow):
         edit_menu.addAction(cut_action)
         edit_menu.addSeparator()
         edit_menu.addAction(find_action)
+        
+        
+        # Create Tools menu & add its action:
+        tools_menu = menu_bar.addMenu("Tools")
+        tools_menu.addAction(font_action)
+        tools_menu.addAction(color_action)
+        tools_menu.addAction(highlight_action)
         
 
 
