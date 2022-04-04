@@ -161,8 +161,23 @@ class RichNotepad(QMainWindow):
                 self.text_field.setText(notpad_txt)
         else:
             QMessageBox.information(self,"Error","Unable to open file.",QMessageBox.Ok)
-
-
+    
+    def save_file(self):
+        """
+        if the save button is clicked , display dialog asking user if they want to save the text.
+        """    
+        file_name,_ = QFileDialog.getSaveFileName(self,"Save File","","HTML Files (*.html);;Text Files (*.txt)")
+        if file_name:
+            if file_name.endswith(".txt"):
+                text = self.text_field.toPlainText()
+                with open(file_name,'w') as f:
+                    f.write(text)
+            elif file_name.endswith(".html"):
+                rich_text = self.text_field.toHtml()
+                with open(file_name,'w') as f:
+                    f.write(rich_text)
+    
+    
 
 # Run Program:
 if __name__ == "__main__":
