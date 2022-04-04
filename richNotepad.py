@@ -177,7 +177,13 @@ class RichNotepad(QMainWindow):
                 with open(file_name,'w') as f:
                     f.write(rich_text)
     
-    
+    def clear_text(self):
+        """
+        If new button is clicked, display message box asking user if the want to clear the text field.
+        """
+        answer = QMessageBox.question(self,"Clear Text","Do you want ot clear the text?",QMessageBox.Yes,QMessageBox.No)
+        if answer == QMessageBox.Yes:
+            self.text_field.clear()
 
 # Run Program:
 if __name__ == "__main__":
