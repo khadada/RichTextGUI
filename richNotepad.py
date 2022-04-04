@@ -127,6 +127,7 @@ class RichNotepad(QMainWindow):
         file_menu.addAction(exit_action)
         
         
+        
 
 
 
