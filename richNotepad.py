@@ -212,7 +212,15 @@ class RichNotepad(QMainWindow):
             # Highlight selection in text edit
             for _ in extra_selections:
                 self.text_field.setExtraSelections(extra_selections)
-
+    def choose_font(self):
+        """
+        Selecto font for text
+        """
+        current = self.text_field.currentFont()
+        font,ok = QFontDialog.getFont(current,self,options=QFileDialog.DontUseNativeDialog)
+        if ok:
+            self.text_field.setCurrentFont(font) # User setFont to sell all text to one type of font
+    
 # Run Program:
 if __name__ == "__main__":
     app = QApplication(sys.argv)
