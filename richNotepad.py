@@ -103,7 +103,14 @@ class RichNotepad(QMainWindow):
         # Highlight:
         highlight_action = QAction("icons/highlight.png", 'Highlight', self)
         highlight_action.setShortcut("Ctrl+Shift+H")
-        highlight_action.triggered.connect(self.choose_font)
+        highlight_action.triggered.connect(self.hightlight_text)
+        
+        # Create actions for About menu:
+        # About:
+        about_action = QAction("icons/about.png", 'About', self)
+        about_action.setShortcut("Ctrl+Shift+H")
+        about_action.triggered.connect(self.about_us)
+        
 
 
 
