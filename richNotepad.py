@@ -220,7 +220,16 @@ class RichNotepad(QMainWindow):
         font,ok = QFontDialog.getFont(current,self,options=QFileDialog.DontUseNativeDialog)
         if ok:
             self.text_field.setCurrentFont(font) # User setFont to sell all text to one type of font
-    
+
+    def choose_font_color(self):
+        """
+        Select color for text.
+        """
+        color = QColorDialog.getColor()
+        if color.isValid():
+            self.text_field.setTextColor(color)
+            
+            
 # Run Program:
 if __name__ == "__main__":
     app = QApplication(sys.argv)
