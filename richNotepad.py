@@ -89,6 +89,23 @@ class RichNotepad(QMainWindow):
         find_action = QAction('icons/fing.png','Find',self)
         find_action.setShortcut("Ctrl+F")
         find_action.triggered.connect(self.find_text_dialog)
+        # Create actions for Tools menu:
+        # Font:
+        font_action = QAction("icons/font.png", 'Font', self)
+        font_action.setShortcut("Ctrl+T")
+        font_action.triggered.connect(self.choose_font)
+        
+        # Color:
+        color_action = QAction("icons/color.png", 'Color', self)
+        color_action.setShortcut("Ctrl+Shift+C")
+        color_action.triggered.connect(self.choose_font_color)
+        
+        # Highlight:
+        highlight_action = QAction("icons/highlight.png", 'Highlight', self)
+        highlight_action.setShortcut("Ctrl+Shift+H")
+        highlight_action.triggered.connect(self.choose_font)
+
+
 
 # Run Program:
 if __name__ == "__main__":
