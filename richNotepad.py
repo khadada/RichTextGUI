@@ -228,7 +228,16 @@ class RichNotepad(QMainWindow):
         color = QColorDialog.getColor()
         if color.isValid():
             self.text_field.setTextColor(color)
-            
+    
+    def hightlight_text(self):
+        """
+        Select color for text's background.
+        """
+        color = QColorDialog.getColor()
+        if color.isValid():
+            self.text_field.setTextBackgroundColor(color)
+    
+        
             
 # Run Program:
 if __name__ == "__main__":
