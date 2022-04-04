@@ -3,9 +3,8 @@
 from json import tool
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QMessageBox,QTextEdit,QFileDialog,QInputDialog,QFontDialog,QColorDialog)
-from PyQt5.QtGui import QIcon, QColor, QTextCursor
+from PyQt5.QtGui import QIcon, QColor, QTextCursor,QFont
 from PyQt5.QtCore import Qt,QSize
-from isort import file
 
 # Create Own Notepad:
 class RichNotepad(QMainWindow):
@@ -32,6 +31,7 @@ class RichNotepad(QMainWindow):
         Set the central widget for QMainWindow, which is the QTextEdit widget for notepad.
         """
         self.text_field = QTextEdit()
+        self.text_field.setFont(QFont("Tahoma",15))
         self.setCentralWidget(self.text_field)
     
     
