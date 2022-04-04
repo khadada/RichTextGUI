@@ -145,6 +145,10 @@ class RichNotepad(QMainWindow):
         tools_menu.addAction(color_action)
         tools_menu.addAction(highlight_action)
         
+        # Create About menu & add its action:
+        about_menu = menu_bar.addMenu("About")
+        about_menu.addAction(about_action)
+        
 
 
 
