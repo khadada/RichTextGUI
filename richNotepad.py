@@ -148,7 +148,19 @@ class RichNotepad(QMainWindow):
         # Create About menu & add its action:
         about_menu = menu_bar.addMenu("About")
         about_menu.addAction(about_action)
-        
+    
+    # Creating methods and functions
+    def open_file(self):
+        """
+        Open a text or html file and display its contents in the text file area
+        """   
+        file_name,_ = QFileDialog.getOpenFileName(self,"Open File","","HTML Files (*.html);;Text Files (*.txt)")
+        if file_name:
+            with open(file_name,'r') as f:
+                notpad_txt = f.read()
+                self.text_field.setText(notpad_txt)
+        else:
+            QMessageBox.information(self,"Error","Unable to open file.",QMessageBox.Ok)
 
 
 
