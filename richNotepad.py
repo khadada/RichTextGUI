@@ -126,7 +126,16 @@ class RichNotepad(QMainWindow):
         file_menu.addSeparator()
         file_menu.addAction(exit_action)
         
-        
+        # Create Edit menu & add its action:
+        edit_menu = menu_bar.addMenu('Edit')
+        edit_menu.addAction(undo_action)
+        edit_menu.addAction(redo_action)
+        edit_menu.addSeparator()
+        edit_menu.addAction(copy_action)
+        edit_menu.addAction(past_action)
+        edit_menu.addAction(cut_action)
+        edit_menu.addSeparator()
+        edit_menu.addAction(find_action)
         
 
 
