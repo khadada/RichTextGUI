@@ -237,6 +237,12 @@ class RichNotepad(QMainWindow):
         if color.isValid():
             self.text_field.setTextBackgroundColor(color)
     
+    def about_us(self):
+        """
+        Display information about the Developer who code this GUI.
+        """
+        QMessageBox.about(self,"About Notepad","Beginner's Pratical Guid to Create GUI\nThis program was create by:Khald Melizi\nPhone: +213780360303\nEmail:lkhadada@gmail.com\nDate:04/04/2022\nIn: Temacine.")
+    
         
             
 # Run Program:
