@@ -241,7 +241,7 @@ class RichNotepad(QMainWindow):
         """
         Display information about the Developer who code this GUI.
         """
-        QMessageBox.about(self,"About Notepad","Beginner's Pratical Guid to Create GUI\nThis program was create by:Khald Melizi\nPhone: +213780360303\nEmail:lkhadada@gmail.com\nDate:04/04/2022\nIn: Temacine.")
+        QMessageBox.about(self,"About Notepad","Beginner's Pratical Guid to Create GUI\n\nThis program was create by:Khald Melizi\n\nPhone: +213780360303\n\nEmail:lkhadada@gmail.com\n\nDate:04/04/2022\n\nIn: Temacine W. Touggourt.")
     
         
             
